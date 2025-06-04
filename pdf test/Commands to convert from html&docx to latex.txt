@@ -1,4 +1,10 @@
-pre-step:
+BEFORE YOU FOLLOW THE GUIDE, PLEASE MAKE SURE TO DO THESE FOLLOWINGS:
+- Install this library first or else things wouldn't work: pandoc (https://pandoc.org/installing.html)
+- Install this Python library if you want to convert from .pdf to .tex: pdfminer
+
+
+
+||----- PRE-STEP -----||
 
 For HTML -> LATEX: (if you only have .mhtml file): Convert from .mhtml to .html through this link:
 https://gildas-lormeau.github.io/mhtml-to-html.html
@@ -6,29 +12,31 @@ https://gildas-lormeau.github.io/mhtml-to-html.html
 
 
 
-Step 1: Open cmd.exe in the current folder and type down these lines of command (MUST HAVE INSTALLED PANDOC BEFORE):
+||----- STEPS -----||
 
-For HTML -> LATEX:
+STEP 1: Open cmd.exe in the current folder and type down these lines of command (MUST HAVE INSTALLED PANDOC BEFORE):
+
+- For HTML -> LATEX:
 chcp 65001
 pandoc -f html+tex_math_dollars+tex_math_single_backslash -t latex input.html -o output.tex
 (The .html file must have name "input.html", the output file would be "output.tex")
 
-For DOCX -> LATEX:
+- For DOCX -> LATEX:
 pandoc -s input.docx -o output.tex
 
-for PDF -> LATEX:
+- for PDF -> LATEX:
 - Convert from .pdf to .html first with Python library "pdfminer" using the following command on cmd:
 pdf2txt.py -t latex input.pdf --force-node-api-uncaught-exceptions-policy=true --trace-deprecation
 
 
 
-Step 2: Close cmd.exe, now run file postprocessing.py so that it will replace all substrings "\(" and "\)" into "$" so that the math notation will be appeared when showing it in Latex type.
+STEP 2: Close cmd.exe, now run file postprocessing.py so that it will replace all substrings "\(" and "\)" into "$" so that the math notation will be appeared when showing it in Latex type.
 
 * WARNING!! *
 *EXTRA STEPS (you have to do it manually because there're some that postprocessing.py can't do it by itself):
 - there's nothing for you to do with manually.w., yayy~
 * END OF WARNING! *
 
-Step 3: DONE!!!! The output file would be output_postprocessed.tex :DD have a nice day
+STEP 3: DONE!!!! The output file would be output_postprocessed.tex :DD have a nice day
 
 Kyanhdang made this!
