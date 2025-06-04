@@ -1,0 +1,515 @@
+{}
+
+\begin{longtable}[]{@{}l@{}}
+\toprule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+ \\
+ \\
+ \\
+ \\
+ \\
+\end{longtable}
+
+\hfill\break
+
+Thời gian làm bài: 240 phút
+
+\subsubsection{Ngày thi: 11-12-2024}\label{nguxe0y-thi-11-12-2024}
+
+\hfill\break
+
+\subsubsection{TỔNG QUAN ĐỀ THI}\label{tux1ed5ng-quan-ux111ux1ec1-thi}
+
+Bài 1. Biến đổi xâu --- TRANSF (100 điểm){ }2
+
+Bài 2. Ngôi nhà mới --- NEWHOME (100 điểm){ }4
+
+Bài 3. Trò chơi trên vòng tròn --- CIRCLE (100 điểm){ }6
+
+Bài 4. Chia xâu --- BSTRING (100 điểm){ }7
+
+Lưu ý:
+
+\begin{itemize}
+\item
+  Điểm của mỗi bài là tổng điểm của các subtask. Điểm của subtask với
+  mỗi lần nộp là điểm nhỏ nhất đạt được của các test trong subtask đó;
+\item
+  Thí sinh không được phép sử dụng các định hướng biên dịch chương trình
+  có các từ khoá sau: {pragma, optimize, target, O3, Ofast,
+  unroll-loops, avx, avx2, fma, omit-frame-pointer}.
+\end{itemize}
+
+\section{Bài 1. Biến đổi xâu ---
+TRANSF}\label{buxe0i-1.-biux1ebfn-ux111ux1ed5i-xuxe2u-transf}
+
+\hfill\break
+
+Alice có hai xâu {S }và {T }, mỗi xâu gồm các ký tự trong tập từ 'a' đến
+'z'. Xâu {S }và xâu {T }có độ dài lần lượt là {ℓ}{S}{ }và {ℓ}{T}{ }.
+Alice muốn biến đổi xâu {S }và {T }để chúng giống nhau bằng việc chèn
+thêm các xâu khác vào các vị trí bất kỳ. Có {K }xâu cho trước (gọi là
+\it{xâu thêm}) được đánh số từ {1 }đến {K}, mỗi xâu có thể được sử
+dụng không giới hạn số lần để Alice chèn vào xâu {S }và {T }.
+
+Việc chèn xâu thêm vào một xâu {Z }(với {Z }là xâu {S }hoặc xâu {T })
+cần được thực hiện với các lưu ý sau:
+
+\hfill\break
+
+\begin{itemize}
+\item
+  {Xâu }Z {có độ dài }ℓ {gồm các ký tự }Z{1}Z{2}{ }. . . Z{ℓ}{. Mỗi vị
+  trí chèn được đánh số từ }{0 }{đến }ℓ{. Vị trí }{0 }{là vị trí ngay
+  bên trái ký tự }Z{1}{. Vị trí }i {(}{1 }{≤ }i {≤ }ℓ{) là vị trí ngay
+  bên phải ký tự }Z{i}{.}
+\item
+  Một xâu được chèn vào {Z }có thể thực hiện tại bất kỳ vị trí nào trong
+  xâu, bao gồm trước ký tự đầu tiên và sau ký tự cuối cùng.
+\item
+  {Ta có thể chèn nhiều xâu vào cùng một vị trí. Các xâu thêm được chèn
+  lần lượt theo một thứ tự xác định. Ví dụ, với }Z {= }Z{1}Z{2}Z{3}{, ba
+  xâu thêm }A {= }A{1}A{2}A{3}{, }B {= }B{1}B{2}{ }{và }C {=
+  }C{1}C{2}C{3}C{4}{ }{được chèn lần lượt vào vị trí 1, ta thu được xâu
+  }Z{1}C{1}C{2}C{3}C{4}B{1}B{2}A{1}A{2}A{3}Z{2}Z{3}{.}
+\item
+  Vị trí chèn các xâu là cố định kể cả sau khi đã chèn một số xâu. Ví
+  dụ, với {Z }{=}"aabc", nếu ta chèn "dd" vào vị trí {0}; "e" và "gg"
+  vào vị trí {1}; "f" vào vị trí {4 }thì ta có xâu kết quả là {Z
+  }{=}"ddaggeabcf".
+
+  \hfill\break
+
+  \textbf{Yêu cầu:} Hãy giúp Alice chèn các xâu thêm sao cho xâu {S
+  }giống với xâu {T }và tổng số xâu chèn thêm vào là ít nhất.
+
+  \subsection{Dữ liệu}\label{dux1eef-liux1ec7u}
+
+  \hfill\break
+\item
+  {Dòng đầu tiên chứa xâu }S {(}{0 }{≤ }ℓ{S} {≤ }{300}{).}
+\item
+  {Dòng thứ hai chứa xâu }T {(}{0 }{≤ }ℓ{T} {≤ }{300}{).}
+\item
+  Dòng thứ ba chứa số nguyên {K }({1 }{≤ }{K }{≤ }{30}), là số lượng xâu
+  có thể sử dụng để chèn.
+\item
+  {Mỗi dòng trong số }K {dòng tiếp theo chứa một xâu }X{i} {(}{1 }{≤ }i
+  {≤ }K{), biểu diễn xâu thêm thứ }i{. Tổng độ dài của }X{i} {không vượt
+  quá 30.}
+
+  \hfill\break
+
+  \subsection{Kết quả}\label{kux1ebft-quux1ea3}
+
+  \hfill\break
+\item
+  Nếu không thể biến đổi để {S }giống {T }, ghi duy nhất một số {−}{1}.
+  Ngược lại, ghi ra số lượng xâu cần phải chèn.
+\item
+  {Dòng thứ }i {trong số }ℓ{S} {+ 1 }{dòng tiếp theo ghi ra một số
+  nguyên }P{i} {là số lượng xâu được chèn ở vị trí }i {trong xâu }S{.
+  Nếu }P{i} > {0 }{thì }P{i} {số tiếp theo ghi ra các thứ
+  tự các xâu được chèn lần lượt ở vị trí }i{.}
+\item
+  {Dòng thứ }j {trong số }ℓ{T} {+ 1 }{dòng tiếp theo ghi ra }Q{j} {là số
+  lượng xâu được chèn ở vị trí }j {trong xâu}
+
+  T {. Nếu }Q{j} > {0 }{thì }Q{j} {số tiếp theo ghi ra các
+  thứ tự các xâu được chèn lần lượt ở vị trí }i{.}
+
+  \subsection{Ví dụ}\label{vuxed-dux1ee5}
+
+  \hfill\break
+
+  \begin{longtable}[]{@{}
+    >{\raggedright\arraybackslash}p{(\linewidth - 2\tabcolsep) * \real{0.5000}}
+    >{\raggedright\arraybackslash}p{(\linewidth - 2\tabcolsep) * \real{0.5000}}@{}}
+  \toprule\noalign{}
+  \endhead
+  \bottomrule\noalign{}
+  \endlastfoot
+  stdin & stdout \\
+  aaa
+
+  b 1
+
+  aab & -1 \\
+  aad
+
+  bb 3
+
+  bbd ad d & 5
+
+  0
+
+  2 1 3
+
+  0
+
+  0
+
+  1 2
+
+  0
+
+  2 2 3 \\
+  \end{longtable}
+
+  \subsection{Giải thích}\label{giux1ea3i-thuxedch}
+
+  Trong ví dụ thứ hai:
+
+  \hfill\break
+\item
+  Với xâu {S}, cần 2 phép chèn tại vị trí 1. Xâu "bbd" và "d" được chèn
+  tại vị trí 1.
+\item
+  Với xâu {T }, chèn "ad" tại vị trí 0 và chèn "ad" và "d" tại vị trí 2.
+\item
+  Xâu kết quả của cả {S }và {T }đều là "adbbdad".
+
+  \hfill\break
+
+  \subsection{Cách tính điểm}\label{cuxe1ch-tuxednh-ux111iux1ec3m}
+
+  \hfill\break
+\item
+  {Subtask 1 (30\% số điểm): Độ dài tất cả các xâu }X{i} {(}{1 }{≤ }i {≤
+  }K{) bằng }{1}{.}
+\item
+  {Subtask 2 (30\% số điểm): Các xâu }S{, }T {và }X{i} {(}{1 }{≤ }i {≤
+  }K{) chỉ chứa ký tự 'a' và/hoặc 'b'. Độ dài tất cả các xâu }X{i}
+  {không quá }{2}{.}
+\item
+  Subtask 3 (40\% số điểm): Không có ràng buộc nào thêm.
+
+  \section{Bài 2. Ngôi nhà mới ---
+  NEWHOME}\label{buxe0i-2.-nguxf4i-nhuxe0-mux1edbi-newhome}
+
+  \hfill\break
+
+  Ở ngôi làng nọ có {N }ngôi nhà, đánh số từ 1 đến {N }. Có {N }{− }{1
+  }con đường, mỗi con đường nối một cặp ngôi nhà và cho phép đi lại theo
+  cả hai chiều. Hệ thống đường bảo đảm đi lại giữa mọi ngôi nhà.
+
+  {Có }N {công dân sống trong làng, mỗi ngôi nhà có đúng một công dân.
+  Công dân ở ngôi nhà thứ }i {thích màu }C{(}i{)}{, vì vậy người đó đã
+  sơn màu }C{(}i{) }{cho ngôi nhà thứ }i{.}
+
+  {Trưởng làng muốn đổi chỗ ở cho người dân của mình. Ông chọn ra ngẫu
+  nhiên một hoán vị }P {= }P{1}, P{2}, . . . , P{N} {thoả mãn }C{(}i{) =
+  }C{(}P{i}{) }{với mọi }i {= 1}, {2}, {3}, . . . , N {(đây là yêu cầu
+  về màu sắc). Các hoán vị thoả mãn đều có xác suất được chọn như nhau,
+  và ông chỉ chọn trong số các hoán vị thoả mãn yêu cầu về màu sắc mà
+  thôi. Tiếp đến, ông ra lệnh cho người ở ngôi nhà thứ }i {chuyển nhà
+  tới ngôi nhà thứ }P{i}{, khi đó người này vẫn được ở trong ngôi nhà có
+  màu yêu thích của mình; độ dài quãng đường mà người này phải đi là số
+  cạnh trên đường đi đơn giữa }i {và }P{i}{. Chi phí để đổi nhà theo
+  hoán vị }P {được tính bằng tổng độ dài đường đi của tất cả công dân.
+  Hãy tính kỳ vọng chi phí đổi nhà.}
+
+  {Nhắc lại: }{Kỳ vọng của một biến ngẫu nhiên }X {rời rạc được tính
+  bởi: }{Σ }X{(}A{) }{× }p{(}A{) }{với }{P }{là tập}
+
+  A{∈P}
+
+  {tất cả các biến cố có thể xảy ra, }p{(}A{) }{là xác suất xảy ra biến
+  cố }A{, và }X{(}A{) }{là giá trị của biến ngẫu nhiên }X {khi xảy ra
+  biến cố }A{. Cụ thể trong trường hợp của bài này: }{P }{là tập tất cả
+  các hoán vị thoả mãn yêu cầu về màu sắc; }A {là một hoán vị thuộc
+  }{P}{; }p{(}A{) }{là xác suất mà trưởng làng chọn hoán vị }A{; và
+  }X{(}A{) }{là chi phí để đổi nhà theo hoán vị }A{.}
+
+  \subsection{Dữ liệu}\label{dux1eef-liux1ec7u-1}
+
+  \hfill\break
+\item
+  Dòng đầu tiên chứa số nguyên dương {N }.
+\item
+  {Dòng thứ hai chứa }N {số nguyên không âm }C{(1)}, C{(2)}, C{(3)}, . .
+  . , C{(}N {)}{.}
+\item
+  Mỗi dòng trong số {N }{− }{1 }dòng tiếp theo chứa hai số nguyên dương
+  {u, v }cho biết có một con đường nối giữa ngôi nhà thứ {u }và ngôi nhà
+  thứ {v}.
+
+  \hfill\break
+
+  \subsection{Kết quả}\label{kux1ebft-quux1ea3-1}
+
+  Q
+
+  Kết quả là một số hữu tỷ, được biểu diễn dưới dạng phân số tối giản
+  {P}{ }, hãy in ra {P }{×}
+
+  Q{1000000005}{\%1000000007}{.}
+
+  \subsection{Ví dụ}\label{vuxed-dux1ee5-1}
+
+  \hfill\break
+
+  \begin{longtable}[]{@{}
+    >{\raggedright\arraybackslash}p{(\linewidth - 2\tabcolsep) * \real{0.5000}}
+    >{\raggedright\arraybackslash}p{(\linewidth - 2\tabcolsep) * \real{0.5000}}@{}}
+  \toprule\noalign{}
+  \endhead
+  \bottomrule\noalign{}
+  \endlastfoot
+  stdin & stdout \\
+  6
+
+  1 4 2 4 1 4
+
+  1 2
+
+  1 3
+
+  2 4
+
+  2 5
+
+  3 6 & 333333343 \\
+  \end{longtable}
+
+  \subsection{Giải thích}\label{giux1ea3i-thuxedch-1}
+
+  Có 12 hoán vị thoả mãn, với tổng chi phí là 88.
+
+  {}
+
+  \begin{longtable}[]{@{}l@{}}
+  \toprule\noalign{}
+  \endhead
+  \bottomrule\noalign{}
+  \endlastfoot
+   \\
+  \end{longtable}
+
+  \hfill\break
+
+  \subsection{Cách tính điểm}\label{cuxe1ch-tuxednh-ux111iux1ec3m-1}
+
+  \hfill\break
+\item
+  {Trong tất cả các test: }{N, C}({i}) {≤ }3 {× }10{5}{;}
+\item
+  Subtask 1 (12 điểm): {N }{≤ }{10}.
+\item
+  Subtask 2 (16 điểm): Mỗi ngôi nhà chỉ có đúng một ngôi nhà khác có
+  cùng màu với nó.
+\item
+  Subtask 3 (20 điểm): {N }{≤ }{1000}.
+\item
+  {Subtask 4 (24 điểm): }C{(1) = }C{(2) = }. . . {= }C{(}n{)}{.}
+\item
+  Subtask 5 (12 điểm): Không có ràng buộc nào thêm.
+\end{itemize}
+
+\section{Bài 3. Trò chơi trên vòng tròn ---
+CIRCLE}\label{buxe0i-3.-truxf2-chux1a1i-truxean-vuxf2ng-truxf2n-circle}
+
+\hfill\break
+
+Cho {M }tập số nguyên rời rạc, trong đó mỗi số nguyên từ {1 }đến {N
+}thuộc duy nhất một trong {M }tập. Các tập {1}{, }{2}{, }{3}{, , ..., M
+}được sắp xếp liên tiếp trên một vòng tròn theo chiều kim đồng hồ (tập
+{M }kề với tập {1}).
+
+Thực hiện quy trình sau đây lặp đi lặp lại:
+
+\hfill\break
+
+\begin{enumerate}
+\item
+  Tại mỗi bước, chọn số nhỏ nhất trong mỗi tập và loại bỏ số đó khỏi
+  tập.
+\item
+  Số nhỏ nhất được loại bỏ khỏi tập {i }sẽ được thêm vào tập {i }{+ 1
+  }(với tập {M }thì thêm vào tập {1}).
+\item
+  Nếu tập {i }rỗng thì không có số nào bị loại bỏ khỏi tập {i }và thêm
+  vào tập kề {i }{+ 1 }(với số bị loại bỏ khỏi tập {M }thì thêm vào tập
+  {1}).
+
+  \hfill\break
+
+  Có {Q }truy vấn, mỗi truy vấn yêu cầu xác định số nhỏ nhất bị loại bỏ
+  tại lần chuyển thứ {T }của tập {1}, nếu tại lần chuyển thứ {T }mà tập
+  {1 }không có số nào thì đưa ra {−}{1}.
+
+  \subsection{Dữ liệu}\label{dux1eef-liux1ec7u-2}
+
+  \hfill\break
+
+  \begin{itemize}
+  \item
+    {Dòng đầu tiên chứa ba số nguyên dương }N, M, Q {(}N, M, Q {≤ }{300
+    000)}{;}
+  \item
+    {Dòng thứ hai chứa }N {số nguyên dương }G{1}, G{2}, ..., G{n} {(1
+    }{≤ }G{i} {≤ }M {)}{, với }G{i} {là tập mà số }i {ban đầu thuộc;}
+  \item
+    {Dòng tiếp theo chứa }Q {số nguyên }T{1}, T{2}, ..., T{Q} {(1 }{≤
+    }T{j} {≤ }{10}{9}{) }{tương ứng với các truy vấn.}
+
+    \hfill\break
+
+    \subsection{Kết quả}\label{kux1ebft-quux1ea3-2}
+
+    Ghi ra kết quả trên một dòng gồm {Q }số tương ứng với kết quả của
+    mỗi truy vấn.
+
+    \subsection{Cách tính điểm}\label{cuxe1ch-tuxednh-ux111iux1ec3m-2}
+
+    \hfill\break
+  \item
+    {Subtask 1 (9 điểm): }N, M, Q, T{j} {≤ }{1 000}{;}
+  \item
+    Subtask 2 (23 điểm): {M }{≤ }{1 000};
+  \item
+    Subtask 3 (35 điểm): {Q }{= 1};
+  \item
+    Subtask 4 (33 điểm): không có ràng buộc gì thêm.
+
+    \hfill\break
+
+    \subsection{Ví dụ}\label{vuxed-dux1ee5-2}
+
+    \hfill\break
+
+    \begin{longtable}[]{@{}
+      >{\raggedright\arraybackslash}p{(\linewidth - 12\tabcolsep) * \real{0.1429}}
+      >{\raggedright\arraybackslash}p{(\linewidth - 12\tabcolsep) * \real{0.1429}}
+      >{\raggedright\arraybackslash}p{(\linewidth - 12\tabcolsep) * \real{0.1429}}
+      >{\raggedright\arraybackslash}p{(\linewidth - 12\tabcolsep) * \real{0.1429}}
+      >{\raggedright\arraybackslash}p{(\linewidth - 12\tabcolsep) * \real{0.1429}}
+      >{\raggedright\arraybackslash}p{(\linewidth - 12\tabcolsep) * \real{0.1429}}
+      >{\raggedright\arraybackslash}p{(\linewidth - 12\tabcolsep) * \real{0.1429}}@{}}
+    \toprule\noalign{}
+    \endhead
+    \bottomrule\noalign{}
+    \endlastfoot
+    \multicolumn{5}{@{}>{\raggedright\arraybackslash}p{(\linewidth - 12\tabcolsep) * \real{0.7143} + 8\tabcolsep}}{%
+    stdin} &
+    \multicolumn{2}{>{\raggedright\arraybackslash}p{(\linewidth - 12\tabcolsep) * \real{0.2857} + 2\tabcolsep}@{}}{%
+    stdout} \\
+    5 & 3 & 2 & \begin{minipage}[t]{\linewidth}\raggedright
+    \hfill\break
+    \strut
+    \end{minipage} & \begin{minipage}[t]{\linewidth}\raggedright
+    \hfill\break
+    \strut
+    \end{minipage} & 1 & 2 \\
+    1 & 1 & 2 & 2 & 3 & \begin{minipage}[t]{\linewidth}\raggedright
+    \hfill\break
+    \strut
+    \end{minipage} & \begin{minipage}[t]{\linewidth}\raggedright
+    \hfill\break
+    \strut
+    \end{minipage} \\
+    1 & 2 & \begin{minipage}[t]{\linewidth}\raggedright
+    \hfill\break
+    \strut
+    \end{minipage} & \begin{minipage}[t]{\linewidth}\raggedright
+    \hfill\break
+    \strut
+    \end{minipage} & \begin{minipage}[t]{\linewidth}\raggedright
+    \hfill\break
+    \strut
+    \end{minipage} & \begin{minipage}[t]{\linewidth}\raggedright
+    \hfill\break
+    \strut
+    \end{minipage} & \begin{minipage}[t]{\linewidth}\raggedright
+    \hfill\break
+    \strut
+    \end{minipage} \\
+    \end{longtable}
+
+    \section{Bài 4. Chia xâu ---
+    BSTRING}\label{buxe0i-4.-chia-xuxe2u-bstring}
+
+    \hfill\break
+
+    Trong khoa học máy tính, biểu diễn và xử lý các số nhị phân là một
+    phần quan trọng của nhiều bài toán thực tế. Một số nhị phân có càng
+    nhiều bit 1 thì mức độ phức tạp khi lưu trữ hoặc xử lý càng lớn. Vì
+    thế, việc tối thiểu hóa số lượng bit 1 trong các phép tính số nhị
+    phân là một bài toán có ý nghĩa thiết thực.
+
+    Với một xâu nhị phân, bạn cần chia xâu này thành các đoạn liên tiếp.
+    Mỗi đoạn sẽ được chuyển đổi thành một số nguyên dưới dạng nhị phân.
+    Sau đó, tính tổng các đoạn này.
+
+    \paragraph{\texorpdfstring{Yêu cầu: {Tìm cách chia xâu sao cho tổng
+    các đoạn đó, khi biểu diễn ở dạng nhị phân, chứa số lượng bit 1 ít
+    nhất.}}{Yêu cầu: Tìm cách chia xâu sao cho tổng các đoạn đó, khi biểu diễn ở dạng nhị phân, chứa số lượng bit 1 ít nhất.}}\label{yuxeau-cux1ea7u-tuxecm-cuxe1ch-chia-xuxe2u-sao-cho-tux1ed5ng-cuxe1c-ux111oux1ea1n-ux111uxf3-khi-biux1ec3u-diux1ec5n-ux1edf-dux1ea1ng-nhux1ecb-phuxe2n-chux1ee9a-sux1ed1-lux1b0ux1ee3ng-bit-1-uxedt-nhux1ea5t.}
+
+    \subsection{Dữ liệu}\label{dux1eef-liux1ec7u-3}
+
+    \hfill\break
+  \item
+    Dòng đầu tiên chứa số nguyên dương {Q }({Q }{≤ }{100}) là số truy
+    vấn.
+  \item
+    Mỗi dòng trong số {Q }dòng tiếp theo chứa xâu nhị phân trong truy
+    vấn thứ {i}.
+
+    \hfill\break
+
+    \subsection{Kết quả}\label{kux1ebft-quux1ea3-3}
+
+    Ghi ra {Q }dòng, dòng thứ {i }đưa ra tương ứng câu trả lời cho xâu ở
+    truy vấn thứ {i}. Với mỗi xâu, thực hiện chèn dấu cộng vào các vị
+    trí các điểm ngắt đoạn xâu. Không đưa ra dấu cách hoặc ký tự bất kỳ
+    khác.
+
+    \subsection{Ví dụ}\label{vuxed-dux1ee5-3}
+
+    \hfill\break
+
+    \begin{longtable}[]{@{}
+      >{\raggedright\arraybackslash}p{(\linewidth - 2\tabcolsep) * \real{0.5000}}
+      >{\raggedright\arraybackslash}p{(\linewidth - 2\tabcolsep) * \real{0.5000}}@{}}
+    \toprule\noalign{}
+    \endhead
+    \bottomrule\noalign{}
+    \endlastfoot
+    stdin & stdout \\
+    2 & 11+0+1101 \\
+    1101101 & 10+1+0+1 \\
+    10101 & \begin{minipage}[t]{\linewidth}\raggedright
+    \hfill\break
+    \strut
+    \end{minipage} \\
+    \end{longtable}
+
+    \subsection{Cách tính điểm}\label{cuxe1ch-tuxednh-ux111iux1ec3m-3}
+
+    Với mỗi xâu truy vấn, gọi {N }là độ dài xâu, {K }là số bit 1 trong
+    một xâu truy vấn đó.
+
+    \hfill\break
+  \item
+    Subtask 1 (15 điểm): {N }{≤ }{16}.
+  \item
+    {Subtask 2 (30 điểm): }N {≤ }{10}{5}, K {≤ }{10}{3}{.}
+  \item
+    Subtask 3 (55 điểm): {N }{≤ }{10}{5}.
+  \end{itemize}
+\end{enumerate}
+
+\hfill\break
+
+out
+
+Với mỗi subtask, gồm nhiều test. Với mỗi test, gọi {out }là tổng số bit
+1 của tất cả các truy vấn tính được theo cách phân tích của chương trình
+thí sinh. {ans }là tổng số bit 1 của tất cả các truy vấn tính được theo
+cách phân tích của ban giám khảo. Điểm của thí sinh nhận được cho test
+đó được tính bằng {( }{ans}{ }{)}{2}.
+
+Điểm của mỗi subtask được tính bằng điểm thấp nhất của một test trong
+subtask đó.

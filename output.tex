@@ -1,0 +1,511 @@
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+\documentclass[
+]{article}
+\usepackage{xcolor}
+\usepackage{amsmath,amssymb}
+\setcounter{secnumdepth}{-\maxdimen} % remove section numbering
+\usepackage{iftex}
+\ifPDFTeX
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math} % this also loads fontspec
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+\usepackage{lmodern}
+\ifPDFTeX\else
+  % xetex/luatex font selection
+\fi
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+\usepackage{longtable,booktabs,array}
+\usepackage{calc} % for calculating minipage widths
+% Correct order of tables after \paragraph or \subparagraph
+\usepackage{etoolbox}
+\makeatletter
+\patchcmd\longtable{\par}{\if@noskipsec\mbox{}\fi\par}{}{}
+\makeatother
+% Allow footnotes in longtable head/foot
+\IfFileExists{footnotehyper.sty}{\usepackage{footnotehyper}}{\usepackage{footnote}}
+\makesavenoteenv{longtable}
+\usepackage{graphicx}
+\makeatletter
+\newsavebox\pandoc@box
+\newcommand*\pandocbounded[1]{% scales image to fit in text height/width
+  \sbox\pandoc@box{#1}%
+  \Gscale@div\@tempa{\textheight}{\dimexpr\ht\pandoc@box+\dp\pandoc@box\relax}%
+  \Gscale@div\@tempb{\linewidth}{\wd\pandoc@box}%
+  \ifdim\@tempb\p@<\@tempa\p@\let\@tempa\@tempb\fi% select the smaller of both
+  \ifdim\@tempa\p@<\p@\scalebox{\@tempa}{\usebox\pandoc@box}%
+  \else\usebox{\pandoc@box}%
+  \fi%
+}
+% Set default figure placement to htbp
+\def\fps@figure{htbp}
+\makeatother
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\usepackage{bookmark}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\urlstyle{same}
+\hypersetup{
+  hidelinks,
+  pdfcreator={LaTeX via pandoc}}
+
+\author{}
+\date{}
+
+\begin{document}
+
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\linewidth - 2\tabcolsep) * \real{0.3659}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 2\tabcolsep) * \real{0.6341}}@{}}
+\toprule\noalign{}
+\begin{minipage}[b]{\linewidth}\centering
+\textbf{SỞ GIÁO DỤC VÀ ĐÀO TẠO}
+
+\textbf{TỈNH PHÚ YÊN}
+
+\textbf{ĐỀ SOẠN THẢO LẠI}
+
+\emph{(Đề thi có 04 trang 04 bài)}
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+\textbf{KỲ THI CHỌN HỌC SINH GIỎI CẤP TỈNH}
+
+\textbf{TRUNG HỌC PHỔ THÔNG, NĂM HỌC 2024 - 2025}
+
+\textbf{Môn thi: TIN HỌC}
+
+\textbf{Ngày thi:} \textbf{27/03/2025}
+
+\textbf{Thời gian:} 180 phút \emph{(không kể thời gian phát đề)}
+
+-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-
+\end{minipage} \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+\end{longtable}
+
+\textbf{TỔNG} \textbf{QUAN BÀI THI}
+
+\begin{longtable}[]{@{}
+  >{\centering\arraybackslash}p{(\linewidth - 10\tabcolsep) * \real{0.0498}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 10\tabcolsep) * \real{0.3605}}
+  >{\centering\arraybackslash}p{(\linewidth - 10\tabcolsep) * \real{0.1864}}
+  >{\centering\arraybackslash}p{(\linewidth - 10\tabcolsep) * \real{0.1687}}
+  >{\centering\arraybackslash}p{(\linewidth - 10\tabcolsep) * \real{0.1629}}
+  >{\centering\arraybackslash}p{(\linewidth - 10\tabcolsep) * \real{0.0716}}@{}}
+\toprule\noalign{}
+\begin{minipage}[b]{\linewidth}\centering
+\textbf{Bài}
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+\textbf{Tên bài}
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+\textbf{File chương trình}
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+\textbf{File dữ liệu vào}
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+\textbf{File dữ liệu ra}
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+\textbf{Điểm}
+\end{minipage} \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+\textbf{1} & \textbf{DÃY CON FIBONACCI} & \textbf{BAI1.*} &
+\textbf{BAI1.INP} & \textbf{BAI1.OUT} & \textbf{5,00} \\
+\textbf{2} & \textbf{KHOẢNG CÁCH HAMMING} & \textbf{BAI2.*} &
+\textbf{BAI2.INP} & \textbf{BAI2.OUT} & \textbf{5,00} \\
+\textbf{3} & \textbf{THỜI GIAN ĐOÀN XE QUA CẦU} & \textbf{BAI3.*} &
+\textbf{BAI3.INP} & \textbf{BAI3.OUT} & \textbf{5,00} \\
+\textbf{4} & \textbf{MÁY CHỦ THỨ BA} & \textbf{BAI4.*} &
+\textbf{BAI4.INP} & \textbf{BAI4.OUT} & \textbf{5,00} \\
+\end{longtable}
+
+\emph{Học sinh phải đặt tên tệp tin chương trình , tên tệp tin dữ liệu
+vào và tên tệp tin dữ liệu ra như phần tổng quan bài thi nêu trên. Dấu *
+là CPP, PY, hoặc PAS, \ldots{} tương ứng đối với ngôn ngữ lập trình C++,
+Python hoặc Pascal, ...}
+
+\textbf{Bài 1:} \emph{(5,00 điểm)} \textbf{DÃY CON FIBONACCI}
+
+Dãy số Fibonacci là một dãy số vô hạn được dịnh nghĩa theo công thức
+sau:
+
+A \(F_{0} = 0\)
+
+A \(F_{1} = 1\)
+
+A \(F_{n} = F_{n - 1} + F_{n - 2}\), với
+\(n \geq 2,\ \ n\mathbb{\in N}\)
+
+Điều này có nghĩa là, mỗi số trong dãy Fibonacci (bắt đầu từ số thứ ba
+trở đi) bằng tổng của hai số liền kề trước đó. Ví dụ 10 số đầu tiên của
+dãy Fibonacci là: \(0,\ 1,\ 1,\ 2,\ 3,\ 5,\ 8,\ 13,\ 21,\ 34\).
+
+Nam viết lên bảng một số nguyên dương \(N\) và dãy số nguyên
+\(a_{1},\ a_{2},\ldots,\ a_{N}\). Nam muốn biết trong dãy số trên có tồn
+tại dãy con gồm các số liên tiếp có tổng là số Fibonacci hay không. Nếu
+có thì độ dài của dãy con dài nhất là bao nhiêu?
+
+\textbf{Yêu cầu:} Hãy tìm độ dài của dãy con dài nhất có tổng là số
+Fibonacci.
+
+\textbf{Dữ liệu vào:} Từ file văn bản \textbf{BAI1.INP} gồm:
+
+\begin{itemize}
+\item
+  Dòng thứ nhất chứa số nguyên dương \(N\) (\(1 \leq N \leq 10^{4}\)).
+\item
+  Dòng thứ hai chứa \(N\) số nguyên \(a_{1},a_{2},\ldots,a_{N}\)
+  (\(0 \leq a_{i} \leq 10^{9}\)).
+\end{itemize}
+
+\textbf{Kết quả:} Ghi ra file văn bản \textbf{BAI1.OUT} một số nguyên
+duy nhất là độ dài của dãy con dài nhất tìm được.
+
+\textbf{Ví dụ:}
+
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\linewidth - 6\tabcolsep) * \real{0.3024}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 6\tabcolsep) * \real{0.3023}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 6\tabcolsep) * \real{0.3566}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 6\tabcolsep) * \real{0.0387}}@{}}
+\toprule\noalign{}
+\begin{minipage}[b]{\linewidth}\centering
+\textbf{BAI1.INP}
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+\textbf{BAI1.OUT}
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+\textbf{Giải thích}
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+\end{minipage} \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+7
+
+3 1 2 4 1 5 4 & 5 & Dãy con \(1,\ 2,\ 4,\ 1,\ 5\) có tổng \(13\) là số
+Fibonacci. & \\
+\end{longtable}
+
+\textbf{Bài 2:} \emph{(5,00 điểm)} \textbf{KHOẢNG CÁCH HAMMING}
+
+Cho hai số tự nhiên \(a\), \(b\) được biểu diễn trong hệ thập phân. Ta
+định nghĩa khoảng cách Hamming giữa hai số \(a\), \(b\) là
+\(Hamming\ (a,\ b)\) bằng số lượng vị trí có chữ số khác nhau khi biểu
+diễn \(a\), \(b\) trong hệ nhị phân có cùng số lượng chữ số. Lưu ý rằng
+khi biểu diễn trong hệ nhị phân, số nào có số lượng chữ số ít hơn thì
+thêm các chữ số \(0\) vào đầu để chúng có độ dài bằng nhau.
+
+Ví dụ: với \(a = 13\), \(b = 25\) khi đó biểu diễn trong hệ nhị phân của
+\(a\) là \(1101\) và của \(b\) là \(11001\), biểu diễn nhị phân của số
+\(a\) ít hơn số \(b\) là \(1\) chữ số, vì vậy thêm \(1\) chữ số \(0\) ở
+đầu để trở thành \(01101\). Lúc này ta có \(Hamming\ (13,25) = 2\) vì ở
+vị trí \(1\) và vị trí \(3\) khác nhau trong biểu diễn nhị phân của
+\(13\), \(25\).
+
+\textbf{Yêu cầu:} Cho \(N\) số tự nhiên \(a_{1},\ a_{2},\ldots,a_{N}\)
+được biểu diễn trong hệ thập phân. Hãy tính khoảng cách Hamming nhỏ nhất
+giữa hai số bất kỳ trong dãy số trên.
+
+\textbf{Dữ liệu vào:} Từ tập tin văn bản \textbf{BAI2.INP} gồm:
+
+\begin{itemize}
+\item
+  Dòng thứ nhất chứa số nguyên dương \(N\)
+  (\(2 \leq N \leq 2*10\hat{}4\)).
+\item
+  Dòng thứ hai chứa \(N\) số \(a_{1},\ a_{2},\ldots,a_{N}\)
+  (\(0 \leq a_{i} \leq 10^{9}\)).
+\end{itemize}
+
+\textbf{Kết quả:} Ghi ra tập tin văn bản \textbf{BAI2.OUT} một số nguyên
+duy nhất là khoảng cách Hamming nhỏ nhất giữa hai số bất kỳ trong dãy số
+đã cho.
+
+\textbf{Ví dụ:}
+
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\linewidth - 6\tabcolsep) * \real{0.2607}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 6\tabcolsep) * \real{0.2609}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 6\tabcolsep) * \real{0.4450}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 6\tabcolsep) * \real{0.0334}}@{}}
+\toprule\noalign{}
+\begin{minipage}[b]{\linewidth}\centering
+\textbf{BAI2.INP}
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+\textbf{BAI2.OUT}
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+\textbf{Giải thích}
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+\end{minipage} \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+3
+
+9 13 25 & 1 & \(Hamming(9,\ 13) = 1\)
+
+\(Hamming(9,\ 25) = 1\)
+
+\(Hamming(13,\ 25) = 2\)
+
+Khoảng cách Hamming nhỏ nhất giữa hai số bất kỳ trong dãy số là \(1\).
+& \\
+\end{longtable}
+
+\textbf{Ràng buộc:}
+
+\begin{itemize}
+\item
+  Có \(60\%\) số test: \(N = 2\);
+\item
+  Có \(20\%\) số test: \(3 \leq N \leq 10^{3}\);
+\item
+  Có \(20\%\) số test: \(10^{3} < N \leq 2*10^{4}\).
+\end{itemize}
+
+\textbf{Bài 3:} \emph{(5,00 điểm)} \textbf{THỜI GIAN ĐOÀN XE QUA CẦU}
+
+Người ta muốn xây dựng một khu du lịch trên một quần đảo xinh đẹp. Giữa
+đào và đất liền chỉ có một chiếc cầu cho phép giao thông một chiều. Cầu
+có trọng tải tối đa là \(P\) và chiều dài là \(L\). Một đoàn xe gồm
+\(N\) chiếc được đánh số từ \(1\) đến \(N\) đang vận chuyển vật liệu từ
+đất liền ra đảo, xe thứ \(i\) có tổng trọng lượng là \(w_{i}\) chạy với
+vận tốc là \(v_{i}\). Để đảm bảo thời gian vận chuyển vật liệu và tải
+trọng của cầu, cơ quan chức năng chỉ cho phép từng nhóm xe tuần tự qua
+cầu. Nhóm xe sau chỉ được di chuyển sau khi toàn bộ xe của nhóm trước đã
+qua cầu, các xe không được phép vượt nhau và tổng trọng lượng các xe
+trong một nhóm không được vượt quá tải trọng của cầu. Thời gian qua cầu
+của mỗi nhóm phụ thuộc vào xe có vận tốc thấp nhất trong nhóm.
+
+\textbf{Yêu cầu:} Hãy tìm phương án chia \(N\) xe thành từng nhóm để
+tổng thời gian di chuyển qua càu của cả đoàn xe là nhỏ nhất.
+
+\textbf{Dữ liệu vào:} Từ file văn bản \textbf{BAI3.INP} gồm:
+
+\begin{itemize}
+\item
+  Dòng thứ nhất ghi ba số nguyên \(N,P,L\)
+  (\(1 \leq N \leq 1000,\ 1 \leq P \leq 100,\ 1 \leq L \leq 1000\)).
+\item
+  Dòng thứ \(i\) trong \(N\) dòng tiếp theo ghi hai số nguyên
+  \(w_{i},\ v_{i}\) (\(1 \leq w_{i} \leq P,\ 1 \leq v_{i} \leq 100\)) là
+  tổng trọng lượng và vận tốc của xe thứ \(i\).
+\end{itemize}
+
+\textbf{Kết quả:} Ghi ra file văn bản \textbf{BAI3.OUT} một số thực duy
+nhất là thời gian nhỏ nhất tìm được (chính xác đến \(2\) chữ số thập
+phân).
+
+\textbf{Ví dụ:}
+
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\linewidth - 6\tabcolsep) * \real{0.1812}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 6\tabcolsep) * \real{0.1884}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 6\tabcolsep) * \real{0.6057}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 6\tabcolsep) * \real{0.0246}}@{}}
+\toprule\noalign{}
+\begin{minipage}[b]{\linewidth}\centering
+\textbf{BAI3.INP}
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+\textbf{BAI3.OUT}
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+\textbf{Giải thích}
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+\end{minipage} \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+7 80 100
+
+40 25
+
+30 20
+
+50 20
+
+60 10
+
+10 50
+
+9 70
+
+49 30 & 22.33 & - Nhóm \(1\) gồm xe \(1\); thời gian: \(100/25 = 4.00\)
+
+- Nhóm \(2\) gồm xe \(2,\ 3\); thời gian: \(100/20 = 5.00\)
+
+- Nhóm \(3\) gồm xe \(4,\ 5,\ 6\); thời gian: \(100/10 = 10.00\)
+
+- Nhóm \(4\) gồm xe \(7\); thời gian: \(100/30\  = 3.33\)
+
+Tổng thời gian qua cầu là:
+
+\(4.00 + 5.00 + 10.00 + 3.33 = 22.33\) & \\
+\end{longtable}
+
+\textbf{Ràng buộc:}
+
+\begin{itemize}
+\item
+  Có \(60\%\) số test: \(N \leq 10\);
+\item
+  Có \(30\%\) số test: \(N \leq 100\);
+\item
+  Có \(10\%\) số test: \(N \leq 1000\).
+\end{itemize}
+
+\textbf{Bài 4:} \emph{(5,00 điểm)} \textbf{MÁY CHỦ THỨ BA}
+
+Hệ thống mạng máy tính của trung tâm Anpha có nhiệm vụ xử lí dữ liệu về
+giao dịch thương mại điện tử cho các công ty khách hàng. Hệ thống này
+được đặt ở nhiều toà nhà khác nhau trong thành phố. Hệ thống gồm có
+\(N\) máy tính được đánh số tuần tự từ \(1\) đến \(N\). Giữa \(N\) máy
+tính này là một mạng lưới gồm \(M\) đường truyền. Hai máy tính
+\(x_{i}\), \(y_{i}\) bất kì được kết nối trực tiếp không quá một đường
+truyền, có chi phí để truyền và xử lí dữ liệu là \(d_{i}\). Trong \(N\)
+máy tính này thì máy tính \(1\), máy tính \(N\) là hai máy chủ và hệ
+thống đường truyền đảm bảo luôn có ít nhất một cách truyền và xử lí dữ
+liệu đi từ máy tính \(1\) đến máy tính \(N\).
+
+Tuy nhiên, cả hai máy chủ của trung tâm Anpha này đều có dấu hiệu quá
+tải về truyền và xử lí dữ liệu. Vì vậy, Ban giám đốc trung tâm quyết
+định chọn ra thêm một máy tính nữa trong số các máy tính còn lại để nâng
+cấp thành một máy chủ thứ ba. Máy tính này sẽ tạm ngưng hoạt động để
+tiến hành nâng cấp, nhưng trong suốt thời gian nâng cấp yêu cầu phải đảm
+bảo đường truyền và xử lí dữ liệu với chi phí ít nhất từ máy tính \(1\)
+đến máy tính \(N\) được thông suốt, nếu không hệ thống mạng của Trung
+tâm sẽ bị trì trệ ảnh hưởng đến hoạt động kinh doanh của các công ty
+khách hàng.
+
+\textbf{Yêu cầu:} Hãy giúp Ban giám đốc trung tâm Anpha xác định các máy
+tính có thể được chọn làm máy chủ thứ ba sao cho máy tính được chọn thỏa
+mãn các điều kiện ở trên.
+
+\textbf{Dữ liệu vào:} Từ tập tin văn bản \textbf{BAI4.INP} gồm:
+
+\begin{itemize}
+\item
+  Dòng đầu tiên ghi hai số nguyên dương \(N\), \(M\) là số lượng máy
+  tính và số lượng đường truyền
+  (\(2 \leq N \leq 3*10^{4},\ \ 1 \leq M \leq 10^{5}\));
+\item
+  Dòng thứ \(i\) trong số \(M\) dòng tiếp theo ghi ba số nguyên dương
+  \(x_{i},y_{i},d_{i}\) với ý nghĩa chi phí truyền và xử lí dữ liệu giữa
+  2 máy tính \(x_{i},y_{i}\) là \(d_{i}\)
+  (\(1 \leq x_{i},y_{i} \leq N;\ 1 \leq d_{i} \leq 10^{3}\)).
+\end{itemize}
+
+\textbf{Kết quả:} Ghi ra tập tin văn bản \textbf{BAI4.OUT} gồm:
+
+\begin{itemize}
+\item
+  Dòng đầu tiên ghi số nguyên \(S\) là số lượng các máy tính có thể được
+  chọn làm máy chủ thứ ba;
+\item
+  \(S\) dòng tiếp theo, mỗi dòng ghi một số nguyên dương là số thứ tự
+  của máy tính được chọn (in ra theo thứ tự tăng dần).
+\end{itemize}
+
+\begin{quote}
+\textbf{Ví dụ:}
+\end{quote}
+
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\linewidth - 6\tabcolsep) * \real{0.1657}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 6\tabcolsep) * \real{0.1722}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 6\tabcolsep) * \real{0.6396}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 6\tabcolsep) * \real{0.0226}}@{}}
+\toprule\noalign{}
+\begin{minipage}[b]{\linewidth}\centering
+\textbf{BAI4.INP}
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+\textbf{BAI4.OUT}
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+\textbf{Hình vẽ}
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+\end{minipage} \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+8 10
+
+1 5 3
+
+2 3 2
+
+5 3 1
+
+5 6 1
+
+5 2 1
+
+6 2 1
+
+1 2 3
+
+6 7 1
+
+7 8 1
+
+2 4 1 & 4
+
+2
+
+3
+
+4
+
+5 & \includegraphics[width=4.28819in,height=2.43182in]{media/image1.png}
+& \\
+\end{longtable}
+
+\begin{quote}
+\textbf{Ràng buộc:}
+\end{quote}
+
+\begin{itemize}
+\item
+  Có \(80\%\) số test: \(2 \leq N \leq 3*10^{3}\);
+\item
+  Có \(20\%\) số test: \(3*10^{3} < N \leq 3*10^{4}\);
+\end{itemize}
+
+\emph{\textbf{Lưu ý:} Tất cả các giá trị số trên cùng một dòng của file
+dữ liệu vào, file dữ liệu ra ghi cách nhau một dấu cách.}
+
+\textbf{-\/-\/-\/-\/-\/-\/-\/-\/-\/- HẾT -\/-\/-\/-\/-\/-\/-\/-\/-\/-}
+
+\emph{\textbf{Chúc bạn làm bài tốt!!:)}}
+
+\emph{\textbf{(Đề được soạn thảo lại bởi ĐKA - học sinh trường THPT Lê
+Lợi!)}}
+
+\end{document}
